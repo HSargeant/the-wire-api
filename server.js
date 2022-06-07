@@ -150,5 +150,4 @@ const deaths = [
         "episode": "",
         "season": ""
     }
-
 ]
