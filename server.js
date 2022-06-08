@@ -192,38 +192,38 @@ MongoClient.connect(connectionString)
         res.sendFile(__dirname + "/404.html")
     })
     
-    app.get("/api/characters/:id",async (req,res)=>{
-        console.log(req.params.id)
-        const id = req.params.id
-        let chars = await db.collection('characters').find().toArray()
-        if(chars[id]){
-            res.json(chars[id])
-        }else  res.sendFile(__dirname + "/404.html")
+    // app.get("/api/characters/:id",async (req,res)=>{
+    //     console.log(req.params.id)
+    //     const id = req.params.id
+    //     let chars = await db.collection('characters').find().toArray()
+    //     if(chars[id]){
+    //         res.json(chars[id])
+    //     }else  res.sendFile(__dirname + "/404.html")
     
       
-    })
+    // })
     
-    app.get("/api/characters", async (req,res)=>{
-        let chars =  await db.collection('characters').find().toArray()
-        // console.log(chars)
-        res.json(chars)
-    })
+    // app.get("/api/characters", async (req,res)=>{
+    //     let chars =  await db.collection('characters').find().toArray()
+    //     // console.log(chars)
+    //     res.json(chars)
+    // })
     
-    app.get("/api/seasons", async (req,res)=>{
-        let seasons1 = await db.collection('seasons').find().toArray()
-        res.json(seasons1)
-    })
+    // app.get("/api/seasons", async (req,res)=>{
+    //     let seasons1 = await db.collection('seasons').find().toArray()
+    //     res.json(seasons1)
+    // })
     
-    app.get("/api/deaths", async (req,res)=>{
-        let deaths = await db.collection('deaths').find().toArray()
-        res.json(deaths)
-    })
-    app.get("/api", async (req,res)=>{
-        let chars = await db.collection('characters').find().toArray()
-     res.json(chars)
+    // app.get("/api/deaths", async (req,res)=>{
+    //     let deaths = await db.collection('deaths').find().toArray()
+    //     res.json(deaths)
+    // })
+    // app.get("/api", async (req,res)=>{
+    //     let chars = await db.collection('characters').find().toArray()
+    //  res.json(chars)
 
        
-    })
+    // })
 })
 
 //data
