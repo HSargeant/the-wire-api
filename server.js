@@ -175,8 +175,8 @@ app.listen(process.env.PORT || PORT,()=>{
 
 // MongoClient.connect(connectionString)
 // .then(client=>{
-    console.log('connected to Db')
-    const db = client.db('the-wire-api')
+    // console.log('connected to Db')
+    // const db = client.db('the-wire-api')
     // const characters = db.collection('characters')
 
     app.get("/", (req,res)=>{
