@@ -6,7 +6,7 @@ const MongoClient = require("mongodb").MongoClient
 const cors = require("cors")
 require('dotenv').config()
 
-////
+
 
 let db 
 let dbName = 'the-wire-api'
@@ -20,6 +20,7 @@ MongoClient.connect(connectionString,{ useUnifiedTopology: true })
 
 app.use(cors())
 app.use(express.static('public'))
+app.use(express.urlencoded({ extended: true }))
 app.use(bodyParser.urlencoded({ extended: true }))
 
     app.get("/", (req,res)=>{
