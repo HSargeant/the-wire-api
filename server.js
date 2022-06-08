@@ -10,7 +10,7 @@ require('dotenv').config()
 
 let db 
 let dbName = 'the-wire-api'
-const connectionString = process.env.DBCONNECT
+const connectionString = process.env.MONGO_URI
     
 MongoClient.connect(connectionString,{ useUnifiedTopology: true })
     .then(client => {
