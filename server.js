@@ -9,14 +9,12 @@ require('dotenv').config()
 // const connectionString = process.env.DBCONNECT
 
 app.use(cors())
-app.use(express.static('public'))
+// app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
 
 
 
-app.listen(process.env.PORT || PORT,()=>{
-    console.log(`The server is running on port ${PORT}`)
-})
+
 
 
 
@@ -60,6 +58,10 @@ app.listen(process.env.PORT || PORT,()=>{
      res.json(characters)
 
        
+    })
+
+    app.listen(process.env.PORT || PORT,()=>{
+        console.log(`The server is running on port ${PORT}`)
     })
 
 //data
