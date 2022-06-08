@@ -16,7 +16,6 @@ MongoClient.connect(connectionString,{ useUnifiedTopology: true })
     .then(client => {
         console.log(`Connected to ${dbName} Database`)
         db = client.db(dbName)
-        console.log(db)
     })
 
 app.use(cors())
@@ -46,8 +45,8 @@ app.use(bodyParser.urlencoded({ extended: true }))
     })
     
     app.get("/api/characters", async (req,res)=>{
-        let chars =  await db.collection('characters').find().toArray()
-        res.json(chars)
+        let chars1 =  await db.collection('characters').find().toArray()
+        res.json(chars1)
     })
     
     app.get("/api/seasons", async (req,res)=>{
