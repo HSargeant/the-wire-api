@@ -26,20 +26,21 @@ app.use(bodyParser.urlencoded({ extended: true }))
         res.sendFile(__dirname + "/index.html")
     })
 
-    app.get("/main.js", (req,res)=>{
-        res.sendFile(__dirname + "/main.js")
-    })
-    app.get("/404.html", (req,res)=>{
-        res.sendFile(__dirname + "/404.html")
-    })
+    // app.get("/main.js", (req,res)=>{
+    //     res.sendFile(__dirname + "/main.js")
+    // })
+    // app.get("/404.html", (req,res)=>{
+    //     res.sendFile("/404.html")
+    // })
     
     app.get("/api/characters/:id",async (req,res)=>{
-        console.log(req.params.id)
+        // console.log(req.params.id)
         const id = req.params.id
         let chars = await db.collection('characters').find().toArray()
-        if(chars[id]){
-            res.json(chars[id])
-        }else  res.sendFile(__dirname + "/404.html")
+
+        if(chars.find(x=>x.char_id == id)){
+            res.json(chars.find(x=>x.char_id == id))
+        }else  res.send("Incorrect syntax. take a look at the documentation. Try endpoint: /api/characters/1")
     
       
     })
@@ -58,12 +59,12 @@ app.use(bodyParser.urlencoded({ extended: true }))
         let deaths = await db.collection('deaths').find().toArray()
         res.json(deaths)
     })
-    app.get("/api", async (req,res)=>{
-        let chars = await db.collection('characters').find().toArray()
-     res.json(chars)
 
-       
-    })
+    //dev testing
+    // app.get("/api", async (req,res)=>{
+    //     let chars = await db.collection('characters').find().toArray()
+    //  res.json(chars)
+    // })
     app.listen(process.env.PORT || PORT,()=>{
         console.log(`The server is running on port ${PORT}`)
     })
