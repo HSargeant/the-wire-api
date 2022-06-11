@@ -38,9 +38,11 @@ app.use(bodyParser.urlencoded({ extended: true }))
         const id = req.params.id
         let chars = await db.collection('characters').find().toArray()
 
-        if(chars.find(x=>x.char_id == id)){
-            res.json(chars.find(x=>x.char_id == id))
-        }else  res.send("Incorrect syntax. take a look at the documentation. Try endpoint: /api/characters/1")
+        if(chars.find(elem=>elem.char_id == id)){
+            res.json(chars.find(elem=>elem.char_id == id))
+        }else  if(chars.find(elem=>elem.name == id)){
+            res.json(chars.find(elem=>elem.name == id))
+        }else res.send("Incorrect syntax. take a look at the documentation. Try endpoint: /api/characters/1")
     
       
     })
