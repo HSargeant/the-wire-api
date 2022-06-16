@@ -7,21 +7,54 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/characters" method="POST">
-        <input type="text" placeholder="name" name="name">
-        <input type="" placeholder="char_id" name="char_id">
-        <input type="text" placeholder="nickname" name="nickname">
-        <input type="text" placeholder="occupation" name="occupation">
-        <input type="text" placeholder="seasons" name="seasons">
-        <input type="text" placeholder="first-seen" name="first-seen">
-        <input type="text" placeholder="last-seen" name="last-seen">
-        <input type="text" placeholder="status" name="status">
-        <input type="text" placeholder="image" name="image">
-        <input type="text" placeholder="actor" name="actor">
-        <input type="text" placeholder="category" name="category">
-        <button type="submit">Submit</button>
-    </form>
+
+    <section>
+        <h2>Add A Character:</h2>
+
+        <form action="/addChar" method="POST">
+        <ul>
+            <li><input type="text" placeholder="name" name="name"></li>
+           <li> <input type="text" placeholder="aka" name="aka"></li>
+            <li><input type="text" placeholder="occupation" name="occupation"></li>
+            <li><input type="text" placeholder="first seen" name="first"></li>
+            <li><input type="text" placeholder="last seen" name="last"></li>
+            <li><input type="text" placeholder="seasons" name="seasons"></li>
+            <li><input type="text" placeholder="status" name="status"></li>
+            <li><input type="text" placeholder="actor" name="actor"></li>
+            <li><input type="text" placeholder="image" name="image"></li>
+            <li><input type="text" placeholder="about" name="about"></li>
+            <li><input type="text" placeholder="category" name="category"></li>
+            <input type="submit">
+        </ul>
+        </form>
+    </section>
 
 
+    <section>
+        <h2>Add A Quote:</h2>
+
+        <form action="/addQuote" method="POST">
+            <input type="text" placeholder="Name" name="name">
+            <input type="text" placeholder="Quote" name="quote">
+            <input type="submit">
+        </form>
+    </section>
+
+    <section>
+        <h2>Add A Death:</h2>
+
+        <form action="/addDeath" method="POST">
+        <ul>
+            <li>Name<input type="text" placeholder="Name" name="name"></li>
+            <li>cause<input type="text" placeholder="Cause" name="cause"></li>
+           <li> responsible<input type="text" placeholder="Responsible" name="responsible"></li>
+            <li>episode<input type="text" placeholder="Episode" name="episode"></li>
+            <li>season<input type="text" placeholder="Season" name="season"></li>
+            <input type="submit">
+        </ul>
+        </form>
+    </section>
+
+<script src="main.js"></script>
 </body>
 </html>

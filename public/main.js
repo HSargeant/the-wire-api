@@ -9,3 +9,14 @@
 //     }
 // }
 // yup()
+// document.querySelector(".submit").addEventListener('click',addQuote)
+
+// async function addQuote(){
+//    try{ 
+//         const res = await fetch('/addQuote')
+//         const data = await res.json()
+//         console.log(data)
+//     }catch (error) {
+//     console.error(error);
+//     }
+// }
