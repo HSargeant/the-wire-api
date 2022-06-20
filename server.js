@@ -40,6 +40,12 @@ MongoClient.connect(connectionString,{ useUnifiedTopology: true })
     app.get("/", (req,res)=>{
         res.sendFile(__dirname + "/index.html")
 
+        let visitorCount = await db.collection('count').find().toArray()
+         db.collection("count").updateOne({'count': visitorCount[0].count},{$set: {"count":visitorCount[0].count+1}},function(err, res) {
+            if (err) throw err;
+            console.log("1 document updated")
+        })
+
     })
 
     app.get("/api", async (req,res)=>{

@@ -16,10 +16,10 @@ This API is free, there is a rate limit of ______ requests a day. If reach the l
 #### Character Attributes
 
 | Attribute   | Type          | Description  									  |
-| ----------- | ------------- | ------------------------------------------------- |
+| ----------- | :-------------: | ------------------------------------------------- |
 | char_id     | string  	  | Unique Id per character							  |
-| name        | string        | A character's full name 						  |
-| occupation  | array         | List of known occupation/s						  |
+| name        | string        | A character's full name |
+| occupation  | array         | List of known occupation/s	|
 | image       | string        | Character's image								  |
 | status      | string        | Are the still in the game or dead    			  |
 | aka		  | string        | A nickname or alias the character is referred as  |
