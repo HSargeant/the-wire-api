@@ -10,8 +10,8 @@ const cors = require("cors")
 require('dotenv').config()
 
 
-let db 
-let dbName = 'the-wire-api'
+let db
+let dbName = process.env.DBNAME
 const connectionString = process.env.MONGO_URI
 
 MongoClient.connect(connectionString,{ useUnifiedTopology: true })
@@ -40,7 +40,7 @@ MongoClient.connect(connectionString,{ useUnifiedTopology: true })
     app.get("/", (req,res)=>{
         res.sendFile(__dirname + "/index.html")
 
-        let visitorCount = await db.collection('count').find().toArray()
+        let visitorCount =  db.collection('count').find().toArray()
          db.collection("count").updateOne({'count': visitorCount[0].count},{$set: {"count":visitorCount[0].count+1}},function(err, res) {
             if (err) throw err;
             console.log("1 document updated")
