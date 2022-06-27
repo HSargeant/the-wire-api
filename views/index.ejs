@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Wire API</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/normalize.css">
+    </head>
+    <body>
+        <!-- <noscript>You need to enable JavaScript to run this app.</noscript> -->
+            <div class="container">
+                <header class="center">
+                    <nav>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/documentation.html">Documentation</a></li>
+                            <li><a>About</a></li>
+                        </ul>
+                    </nav>
+                    <img src="the-wire-title-logo-slice.avif" alt="" >
+
+                </header>
+                <section class="search"> 
+                    <input id="search" type="text" placeholder="Search characters">
+                </section>
+                
+                <section class="cards">
+                    <% for(let i=0; i < characters.length; i++) { %>
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front"><img src=<%=characters[i].image %> alt="" ></div>
+                            <div class="card-back">
+                                <h2><%=characters[i].name%></h2>
+                                <ul>
+                                    <li><strong>Job:</strong> <%=characters[i].occupation[0] %></li>
+                                    <li><strong>Status:</strong> <%=characters[i].status %></li>
+                                    <li><strong>Category:</strong> <%=characters[i].category %></li>
+                                    <li><strong>Portrayed By:</strong> <%=characters[i].actor %></li>
+                                    <li><p><%= characters[i].about %></p></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <%}%>
+                    
+                </section>
+            </div>
+        <script src="main.js"></script>
+    </body>
+</html>

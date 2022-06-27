@@ -1,0 +1,225 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    /* background: #000 url(/static/media/bg.1be2d3a0.jpg) no-repeat 50% / cover; */
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+a {
+    text-decoration: none;
+}
+.container {
+    max-width: 1500px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+header {
+    color:black;
+    height: 200px;
+
+}
+header nav{
+    width: 100%;
+    display: flex;
+
+}
+header img {
+    display: block;
+    margin: 0 auto;
+    width: 400px;
+}
+header nav ul{
+    display: flex;
+    align-items: center;
+    width: 500px;
+    justify-content: space-evenly;
+    /* margin:2% 0; */
+    padding: 1% 0;
+    height: 40px;
+    list-style: none;
+}
+.center {
+    align-items: center;
+    /* justify-content: center; */
+}
+.search {
+    height: 50px;
+}
+input[type="text"] {
+    display: block;
+    padding: 10px;
+    font-size: 20px;
+    border: 0;
+    border-radius: 5px;
+    width: 60%;
+    margin: auto;
+}
+.cards {
+    color: #fff;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    gap: 1rem;
+}
+.card {
+    cursor: pointer;
+    background-color: transparent;
+    height: 300px;
+    perspective: 1000px;
+}
+
+.card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+.card-back,
+.card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.card-back {
+    font-size: 0.95em;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    transform: rotateY(180deg);
+}
+.card-back p{
+    font-size: 0.83em;
+
+}
+.card li {
+    list-style: none;
+    padding-bottom: 5px;
+}
+.card h2 {
+    font-size: 25px;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+h1,h2,h3,h4,h5{
+    padding-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+table {
+    margin: 0 0 2em 0;
+    width: 50%; 
+    border-collapse: collapse;
+    border-spacing: 0;
+ }
+table tbody tr {
+      border-left: 0;
+      border-right: 0; }
+    table tbody tr:nth-child(2n + 1) {
+        background-color: rgba(199, 206, 209, 0.121); }
+table td {
+      padding: 0.75em 0.75em; }
+table th {
+      color: #3d4449;
+      font-size: 0.9em;
+      font-weight: 600;
+      padding: 0 0.75em 0.75em 0.75em;
+      text-align: left; }
+table thead {
+      border-bottom: solid 2px rgba(210, 215, 217, 0.75); }
+table tfoot {
+      border-top: solid 2px rgba(210, 215, 217, 0.75); }
+table.alt {
+      border-collapse: separate; }
+table.alt tbody tr td {
+        border: solid 1px rgba(210, 215, 217, 0.75);
+        border-left-width: 0;
+        border-top-width: 0; }
+table.alt tbody tr td:first-child {
+          border-left-width: 1px; }
+table.alt tbody tr:first-child td {
+        border-top-width: 1px; }
+table.alt thead {
+        border-bottom: 0; }
+    table.alt tfoot {
+        border-top: 0; }
+.flex{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+.example{padding:1%;margin-left:2%;background:#fff;color:#000}
+
+.url-block{
+    display: block; 
+    overflow-x: auto; 
+    margin: 10px 0;
+
+    padding: 0.5em; 
+    color: rgb(56, 58, 66); 
+    background: rgb(250, 250, 250);
+}
+.language-url{
+    white-space: pre;
+}
+pre{
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    color: rgb(56, 58, 66);
+    background: rgb(250, 250, 250);
+}
+
+.docImg {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+}
+.docHead{
+    height: 75px;
+    border-bottom: #333 solid 1px;
+
+
+}
+
+
+@media (max-width: 800px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    header img {
+        width: 400px;
+    }
+    .card img {
+        width: 100%;
+        height: 300px;
+        object-fit:cover;
+    }
+    table {
+        width: 100%; 
+
+     }
+}
+@media (max-width: 500px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+    header img {
+        width: 300px;
+    }
+
+}

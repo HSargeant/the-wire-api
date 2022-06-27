@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>The Wire Api</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">      
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/styledoc.css">
+      <link rel="stylesheet" href="css/normalize.css">
+      
+    </head>
+
+<body>
+  <header class="center docHead">
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/documentation.html">Documentation</a></li>
+            <li><a>About</a></li>
+        </ul>
+        <img class="docImg" src="the-wire-title-logo-slice.avif" alt="" >
+
+    </nav>
+
+  </header>
+  <!-- <nav class="sidebar p-4 custom-sidebar">
+    <h5 class="fw-bold mt-4">Api Reference</h5>
+    <p class="p-1 mb-1"><a href="#root-url">Root URL</a></p>
+    <p class="p-1 mb-1"><a href="#characters">Characters</a></p>
+    <p class="p-1 mb-1"><a href="#quotes">Quotes</a></p>
+    <p class="p-1 mb-1"><a href="#deaths">Character Deaths</a></p>
+  </nav> -->
+  <main class="documentation" role="main">
+    <nav class="navbar">
+      <div class="navContainer">
+        <h2>Introduction</h2>
+        <ul>
+          <a href="#base"><li>Base URL</li></a>
+          <a href="#char"><h2>Characters</h2></a>
+          <a href="#char_at"> <li >Character attributes</li></a>
+          <a href="#all_char"><li >Get all characters</li></a>
+          <a href="#char_id"><li >Get a specific character by id</li></a>
+          <a href="#char_cat"><li >Get characters by category</li></a>
+          <a href="#char_random"><li >Get a random character</li></a>
+          <a href="#char_name"><li >Get a specific character by name</li></a>
+          <a href="#quote"><h2>Quote</h2></a>
+          <a href="#quote_at"><li >Quote attributes</li></a>
+          <a href="#quote_all"><li >Get all quotes</li></a>
+          <a href="#quote_random"><li >Get random quote</li></a>
+          <a href="#quote_name"><li >Get quote by name</li></a>
+          <a href="#death"><h2>Deaths</h2></a>
+          <a href="#death_at"><li >Death Attributes</li></a>
+          <a href="#death_all"><li >Death information</li></a>
+          <a href="#death_name"><li >Get individual death information</li></a>
+          <a href="#death_random"><li>Random death information</li></a>
+    </ul>
+      </div>
+    </nav>
+    <div class="docs_main">
+        <div id="doc">
+          <h1>The Wire API Documentation</h1>
+          <p>
+              The API for the seminal TV series. The API contains data for of characters, quotes and character deaths. With episode data coming soon.  This documentation will help with all you need to begin making your request.
+            
+            </p>
+        </div>
+
+        <div id="base">
+            <h4>Base Url</h4>
+            <p id="example">https://the-wire-api.herokuapp.com/api</p>
+  
+        </div>
+        <div>
+            <h3 id="char">Character Endpoints</h3>
+            <div id="char_at">
+                <h4>Character Attributes</h4>
+                <div class="att_table">
+                  <table>
+                    <tr>
+                      <th>Attribute</th>
+                      <th>Type</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td>char_id</td>
+                      <td>string</td>
+                      <td>Unique id per character	</td>
+                    </tr>
+                    
+                    <tr>
+                      <td>name</td>
+                      <td>string</td>
+                      <td>A character's full name</td>
+                    </tr>
+                    
+                    <tr>
+                      <td>occupation</td>
+                      <td>array</td>
+                      <td>List of known occupation/s</td>
+                    </tr>
+                    
+                    <tr>
+                      <td>image</td>
+                      <td>string</td>
+                      <td>Character's image</td>
+                    </tr>
+                    
+                    <tr>
+                      <td>status</td>
+                      <td>string</td>
+                      <td>Is the character dead or alive</td>
+                    </tr>
+                    
+                    <tr>
+                      <td>aka</td>
+                      <td>string</td>
+                      <td>A nickname or alias the character is referred as</td>
+                    </tr>
+                    
+                    <tr>
+                      <td>seasons</td>
+                      <td>array</td>
+                      <td>List of seasons that the character appeared in    </td>
+                    </tr>
+                    <tr>
+                      <td>about</td>
+                      <td>string</td>
+                      <td>Brief character bio </td>
+                    </tr>
+                  </table>
+                </div>
+            </div>
+            <div id="all_char">
+                <h4>Get all characters</h4>
+                <p>Endpoint to retrieve information from all characters.</p>
+                <p id="example">/api/characters</p>
+            </div>
+            <div id="char_id">
+                <h4>Get single character</h4>
+                <p>Example request by character id.</p>
+                <p id="example">/api/characters/2</p>
+                <div class="json">
+        <pre>
+          {
+            "char_id": "2",
+            "name": "Avon Barksdale",
+            "occupation": ["Head of the Barksdale Organization"],
+            "seasons": [1,2,3,5],
+            "DOB": "August 15, 1970",
+            "status": "Alive",
+            "actor": "Wood Harris",
+            "image": "https://images4.imagebam.com/31/85/39/MEBDII1_o.jpg",
+            "category": "The Street",
+            "about": "Leader of the drug organization that bears his name, 
+                      Barksdale grew up in the Terrace high-rises and has managed to avoid arrest, 
+                      remaining a furtive but increasingly powerful force in the Westside drug trade.",
+            "aka": []
+          }
+         </pre>
+        </div>
+            </div>
+            <div id="char_cat">
+                <h4>Get characters by category</h4>
+                <p>Request characters by category: 'Street', 'Law', 'Port', 'City+Hall', 'The Next Generation (next)', or 'News'</p>
+                <p id="example">/api/category/street</p>
+            </div>
+            <div id="char_random">
+                <h4>Get random character</h4>
+                <p>Request a random character</p>
+                <p id="example">/api/characters/random</p>
+            </div>
+            
+            <div id="char_name">
+                <h4>Search character by name</h4>
+                <p id="example">/api/characters/d'angelo</p>
+                <p class="offset">This works with the first name, last name or nickname.</p>
+            </div>
+        </div>
+        <!-- Quotes -->
+        <div>
+            <h3 id="quote">Quote Endpoints</h3>
+            <div id="quote_at">
+                <h4>Quote Attributes</h4>
+                <div class="att_table">
+                  <table>
+                    <tr>
+                    <th>Attribute</th>
+                    <th>Type</th>
+                    <th>Discription</th>
+                    </tr>
+                    <tr>
+                      <td>quote</td>
+                      <td>string</td>
+                      <td>The Quote</td>
+                    </tr>
+                    <tr>
+                      <td>name</td>
+                      <td>string</td>
+                      <td>The character</td>
+                    </tr>
+                  </table>
+                </div>
+            </div>
+            <div id="quote_all">
+                <h4>Get all quotes</h4>
+                <p>Endpoint to retrieve all Quotes</p>
+                <p id="example">/api/quotes</p>
+            </div>
+            
+            
+            <div id="quote_random">
+                <h4>Get a random quote</h4>
+                <p>Endpoint to retrieve a random quote</p>
+                <p id="example">/api/quotes/random</p>
+            </div>
+            <div id="quote_name">
+                <h4>Get quote by character name</h4>
+                <p>Endpoint to collect all quotes from a specific author. Just as the character endpoint, this works with the first name, last name or nickname.</p>
+                <p id="example">/api/quotes/bunk</p>
+                <div class="json">
+                    <pre>
+      [
+          {
+            "name": "Bunk Moreland",
+            "quote": "You can go a long way in this country killing black folk. Young males especially. 
+            Misdemeanor homicides."
+          },
+          {
+            "name": "Bunk Moreland",
+            "quote": "You happy now, bitch?"
+          },
+          {
+            "name": "Bunk Moreland",
+            "quote": "The bigger the lie, the more they believe."
+          },
+          ...
+                    </pre>
+                  </div>
+            </div>
+        </div>
+        <div>
+            <h3 id="death">Character Deaths Endpoints</h3>
+            <div id="death_at">
+                <h4>Death Attributes</h4>
+                <div class="att_table">
+                  <table>
+                    <tr>
+                      <th>Attribute</th>
+                      <th>Type</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td>name</td>
+                      <td>string</td>
+                      <td>The name of the deceased character</td>
+                    </tr>
+                    <tr>
+                      <td>cause</td>
+                      <td>string</td>
+                      <td>How the character died</td>
+                    </tr>
+                    <tr>
+                      <td>responsible</td>
+                      <td>string</td>
+                      <td>The person(s) is directly responsible for the death</td>
+                    </tr>
+                    <tr>
+                      <td>season</td>
+                      <td>string</td>
+                      <td>The season the death occured in</td>
+                    </tr>
+                    <tr>
+                      <td>episode</td>
+                      <td>string</td>
+                      <td>The episode of the season</td>
+                    </tr>
+                  </table>
+                </div>
+            </div>
+            <div id="death_all">
+                <h4>Get all death information</h4>
+                <p>Endpoint to retrieve information about every death in Breaking Bad.</p>
+                <p id="example">/api/deaths</p>
+            </div>
+            <div id="death_info">
+                <h4>Get a character's death information</h4>
+                <p>Endpoint to retrieve information about an individuals death</p>
+                <p id="example">/api/death/omar</p>
+            </div>
+            
+            <div id="death_name">
+                <h4>Get a list of deaths caused by a character.</h4>
+                <p>Use this enpoint to find out how many bodies a character has from the series. </p>
+                <p id="example">api/deaths?responsible=wee-bey</p>
+
+                <p class="offset">Just as for characters the parameters work for nick names as well as first and last names.</p>
+            </div>
+            <div id="death_random">
+                <h4>Get random death information about a character</h4>
+                <p id="example">/api/random-death</p>
+            </div>
+            <div class="empty">
+            </div>
+        </div>
+    </div>
+ 
+
+</main>
+  
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wire Api</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="center docHead">
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/documentation.html">Documentation</a></li>
+            <li><a>About</a></li>
+        </ul>
+        <img class="docImg" src="the-wire-title-logo-slice.avif" alt="" >
+
+    </nav>
+
+  </header>
+  <nav class="sidebar p-4 custom-sidebar" style="background-color: rgb(255, 255, 255);">
+    <h5 class="fw-bold mt-4">Api Reference</h5>
+    <p class="p-1 mb-1"><a href="#root-url">Root URL</a></p>
+    <p class="p-1 mb-1"><a href="#characters">Characters</a></p>
+    <p class="p-1 mb-1"><a href="#quotes">Quotes</a></p>
+    <p class="p-1 mb-1"><a href="#deaths">Character Deaths</a></p>
+  </nav>
+  <div class="container">
+  <div class="center flex">
+  <h1>The Wire API</h1>
+  <p>The API for the seminal TV series. The API contains data for of characters, quotes and character deaths. With episode data coming soon.  This documentation will help with all you need to begin making your request.</p> -->
+
+  <!-- base url -->
+  <!-- <div class="row justify-content-center mt-5">
+    <div class="col-md-7 col-sm-12">
+        <h2 id="root-url" class="fw-bold">Root URL</h2>
+        <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left" role="separator"><div class="p-divider-content"></div></div>
+        The Root endpoint provides information on all available resources within the API. All requests are GET requests and are sent over HTTPS.
+        <div class="pb-2 pt-2 position-relative undefined">
+            <span class="pi pi-copy copy-button p-button-rounded p-2 fs-5 p-button-outlined"></span>
+            <pre class="url-block"><code class="language-url"><span>http://the-wire-api.herokuapp.com/api</span></code></pre>
+            <div class="p-toast p-component p-toast-top-right"><div></div></div>
+        </div>
+        <h4 class="fw-bold">Example Result:</h4>
+        <div class="pb-2 pt-2 position-relative undefined">
+            <span class="pi pi-copy copy-button p-button-rounded p-2 fs-5 p-button-outlined"></span>
+            <pre><code>
+              {
+                "characters": "/api/characters",
+                "quotes": "/api/quotes",
+                "deaths": "/api/deaths"
+            }
+            </code></pre>
+            <div class="p-toast p-component p-toast-top-right"><div></div></div>
+        </div>
+    </div>
+</div> -->
+<!-- 
+  
+
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-7 col-sm-12">
+          <h2 id="characters" class="fw-bold">Characters</h2>
+          <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left" role="separator"><div class="p-divider-content"></div></div>
+          The Characters endpoint provides information on all characters found in The Wire.
+          <h4 class="fw-bold mt-5">Get all characters</h4>
+          <p>The list of all characters can be found by using the <span class="highlight-block">/characters/</span> endpoint.</p>
+          <div class="pb-2 pt-2 position-relative undefined">
+              <span class="pi pi-copy copy-button p-button-rounded p-2 fs-5 p-button-outlined"></span>
+              <pre><code><span><span>
+        </span></span><span><span>http://the-wire-api.herokuapp.com/api/characters</span></span></code></pre>
+              <div class="p-toast p-component p-toast-top-right"><div></div></div>
+          </div>
+          <h4 class="fw-bold mt-5">Get a single character</h4>
+          <p>Example:</p>
+          <div class="pb-2 pt-2 position-relative undefined">
+              <span class="pi pi-copy copy-button p-button-rounded p-2 fs-5 p-button-outlined"></span>
+              <pre><code><span><span>
+         </span></span><span><span>http://the-wire-api.herokuapp.com/api/characters/2 or http://the-wire-api.herokuapp.com/api/characters/avon</span></pre>
+              <div class="p-toast p-component p-toast-top-right"><div></div></div>
+          </div>
+          <div class="pb-2 pt-2 position-relative undefined">
+              <span class="pi pi-copy copy-button p-button-rounded p-2 fs-5 p-button-outlined"></span>
+              <pre>
+                {
+                  "char_id": "2",
+                  "name": "Avon Barksdale",
+                  "occupation": ["Head of the Barksdale Organization"],
+                  "seasons": [1,2,3,5],
+                  "DOB": "August 15, 1970",
+                  "status": "Alive",
+                  "actor": "Wood Harris",
+                  "image": "https://images4.imagebam.com/31/85/39/MEBDII1_o.jpg",
+                  "category": "The Street",
+                  "about": "Leader of the drug organization that bears his name, 
+                            Barksdale grew up in the Terrace high-rises and has managed to avoid arrest, 
+                            remaining a furtive but increasingly powerful force in the Westside drug trade.",
+                  "aka": []
+              }
+              </pre>
+              <p>***can use first name, last name, or nickname/alias ***
+                ***	examples: '/api/characters/bunk' or '/api/characters/stringer'</p>
+              <div class="p-toast p-component p-toast-top-right"><div></div></div>
+          </div>
+
+          <div class="w-100 mb-3 mt-5">
+              <h3 class="fw-bold">Characters Atrributes</h3>
+              <div class="p-datatable p-component p-datatable-responsive-scroll" data-scrollselectors=".p-datatable-wrapper" pr_id_1="">
+                  <div class="p-datatable-wrapper">
+                    <table>
+                      <tr>
+                        <th>Attribute</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                      </tr>
+                      <tr>
+                        <td>char_id</td>
+                        <td>string</td>
+                        <td>Unique Id per character	</td>
+                      </tr>
+                      
+                      <tr>
+                        <td>name</td>
+                        <td>string</td>
+                        <td>A character's full name</td>
+                      </tr>
+                      
+                      <tr>
+                        <td>occupation</td>
+                        <td>array</td>
+                        <td>List of known occupation/s</td>
+                      </tr>
+                      
+                      <tr>
+                        <td>image</td>
+                        <td>string</td>
+                        <td>Character's image</td>
+                      </tr>
+                      
+                      <tr>
+                        <td>status</td>
+                        <td>string</td>
+                        <td>Is the character dead or alive</td>
+                      </tr>
+                      
+                      <tr>
+                        <td>aka</td>
+                        <td>string</td>
+                        <td>A nickname or alias the character is referred as</td>
+                      </tr>
+                      
+                      <tr>
+                        <td>seasons</td>
+                        <td>array</td>
+                        <td>List of seasons that the character appeared in    </td>
+                      </tr>
+                      <tr>
+                        <td>about</td>
+                        <td>string</td>
+                        <td>Brief character bio </td>
+                      </tr>
+                    </table>
+                      
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="row justify-content-center mt-5">
+      <div class="col-md-7 col-sm-12">
+          <h2 id="quoteuotes" class="fw-bold">Character Quotes</h2>
+          <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left" role="separator"><div class="p-divider-content"></div></div>
+          The Quotes endpoint provides a collection of quotes from various characters of The Wire.
+          <h4 class="fw-bold mt-5">Get all quotes</h4>
+          <p>The list of all characters can be found by using the <span class="highlight-block">/quotes</span> endpoint.</p>
+          <div class="pb-2 pt-2 position-relative undefined">
+              <span class="pi pi-copy copy-button p-button-rounded p-2 fs-5 p-button-outlined"></span>
+              <pre><code><span><span>
+        </span></span><span><span>http://the-wire-api.herokuapp.com/api/quotes</span></span></code></pre>
+              <div class="p-toast p-component p-toast-top-right"><div></div></div>
+          </div>
+          <h4 class="fw-bold mt-5">Get Quotes From a Specific Character</h4>
+          <div class="pb-2 pt-2 position-relative undefined">
+              <span class="pi pi-copy copy-button p-button-rounded p-2 fs-5 p-button-outlined"></span>
+              <pre><code><span><span>
+         </span></span><span><span>http://the-wire-api.herokuapp.com/api/quotes/{name}</span></pre>
+         <p>***can use first name, last name, or nickname/alias ***
+          ***	examples: '/api/quotes/mcnulty' or '/api/quotes/stringer'</p>
+          </div>
+
+          <h4 class="fw-bold mt-5">Get a Random Quote</h4>
+          <div class="pb-2 pt-2 position-relative undefined">
+              <span class="pi pi-copy copy-button p-button-rounded p-2 fs-5 p-button-outlined"></span>
+              <pre><code><span><span>
+         </span></span><span><span>http://the-wire-api.herokuapp.com/api/quotes/random</span></pre>
+          </div>
+
+          <div class="w-100 mb-3 mt-5">
+              <h3 class="fw-bold">Quote Atrributes</h3>
+              <div class="p-datatable p-component p-datatable-responsive-scroll" data-scrollselectors=".p-datatable-wrapper" pr_id_1="">
+                  <div class="p-datatable-wrapper">
+                    <table>
+                      <tr>
+                      <th>Attribute</th>
+                      <th>Type</th>
+                      <th>Discription</th>
+                      </tr>
+                      <tr>
+                        <td>quote</td>
+                        <td>string</td>
+                        <td>The Quote</td>
+                      </tr>
+                      <tr>
+                        <td>name</td>
+                        <td>string</td>
+                        <td>The character</td>
+                      </tr>
+                    </table>
+                      
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-7 col-sm-12">
+        <h2 id="quoteuotes" class="fw-bold">Character Deaths</h2>
+        <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left" role="separator"><div class="p-divider-content"></div></div>
+        The Deaths endpoint provides a collection of characters that died throughout the series.
+        <h4 class="fw-bold mt-5">Get all deaths</h4>
+        <div class="pb-2 pt-2 position-relative undefined">
+            <span class="pi pi-copy copy-button p-button-rounded p-2 fs-5 p-button-outlined"></span>
+            <pre><code><span><span>
+      </span></span><span><span>http://the-wire-api.herokuapp.com/api/quotes</span></span></code></pre>
+            <div class="p-toast p-component p-toast-top-right"><div></div></div>
+        </div>
+        <h4 class="fw-bold mt-5">Get Quotes From a Specific Character</h4>
+        <div class="pb-2 pt-2 position-relative undefined">
+            <span class="pi pi-copy copy-button p-button-rounded p-2 fs-5 p-button-outlined"></span>
+            <pre><code><span><span>
+       </span></span><span><span>http://the-wire-api.herokuapp.com/api/quotes/{name}</span></pre>
+       <p>***can use first name, last name, or nickname/alias ***
+        ***	examples: '/api/quotes/mcnulty' or '/api/quotes/stringer'</p>
+        </div>
+
+        <h4 class="fw-bold mt-5">Get a Random Quote</h4>
+        <div class="pb-2 pt-2 position-relative undefined">
+            <span class="pi pi-copy copy-button p-button-rounded p-2 fs-5 p-button-outlined"></span>
+            <pre><code><span><span>
+       </span></span><span><span>http://the-wire-api.herokuapp.com/api/quotes/random</span></pre>
+        </div>
+
+        <div class="w-100 mb-3 mt-5">
+            <h3 class="fw-bold">Quote Atrributes</h3>
+            <div class="p-datatable p-component p-datatable-responsive-scroll" data-scrollselectors=".p-datatable-wrapper" pr_id_1="">
+                <div class="p-datatable-wrapper">
+                  <table>
+                    <tr>
+                    <th>Attribute</th>
+                    <th>Type</th>
+                    <th>Discription</th>
+                    </tr>
+                    <tr>
+                      <td>quote</td>
+                      <td>string</td>
+                      <td>The Quote</td>
+                    </tr>
+                    <tr>
+                      <td>name</td>
+                      <td>string</td>
+                      <td>The character</td>
+                    </tr>
+                  </table>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+    
+
+
+
+ 
+
+<!-- <h2> Quote Endpoints</h2>
+
+<h3> Quote Attributes</h3>
+<table>
+  <tr>
+  <th>Attribute</th>
+  <th>Type</th>
+  <th>Discription</th>
+  </tr>
+  <tr>
+    <td>quote</td>
+    <td>string</td>
+    <td>The Quote</td>
+  </tr>
+  <tr>
+    <td>name</td>
+    <td>string</td>
+    <td>The character</td>
+  </tr>
+</table>
+
+
+
+<h3> Get all quotes</h3>
+<code>
+
+/api/quotes
+
+</code>
+
+<h3> Get a random quote</h3>
+<code>
+
+/api/quotes/random
+
+</code>
+
+<h3> Get quote by author</h3>
+<span>This endpoint allows you to get all quotes from a specific character.</span><br>
+<code>
+
+/api/quotes/Bunk, /api/quotes/Mcnulty etc... 
+
+</code>
+
+<h2> Death Endpoints</h2>
+
+<h3> Death Attributes</h3>
+<table>
+  <tr>
+    <th>Attribute</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>name</td>
+    <td>string</td>
+    <td>The name of the deceased character</td>
+  </tr>
+  <tr>
+    <td>cause</td>
+    <td>string</td>
+    <td>How the character died</td>
+  </tr>
+  <tr>
+    <td>responsible</td>
+    <td>string</td>
+    <td>Who is directly responsible for their death</td>
+  </tr>
+  <tr>
+    <td>season</td>
+    <td>string</td>
+    <td>The season the death occured in</td>
+  </tr>
+  <tr>
+    <td>episode</td>
+    <td>string</td>
+    <td>The episode of the season</td>
+  </tr>
+</table>
+
+<h3> Get all death information</h3>
+
+<code>/api/deaths</code>
+
+
+<h3> Get random death information about an individual</h3>
+<code>
+/api/deaths/random-death
+</code> -->
+</div>
+</div>  
+</body>
+</html>

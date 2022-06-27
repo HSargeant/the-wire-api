@@ -1,4 +1,4 @@
-// async function yup(){
+// async function test(){
 //    try{ 
 //         const res = await fetch('/api')
 //         const data = await res.json()
@@ -8,15 +8,22 @@
 //     console.error(error);
 //     }
 // }
-// yup()
-// document.querySelector(".submit").addEventListener('click',addQuote)
+// test()
 
-// async function addQuote(){
-//    try{ 
-//         const res = await fetch('/addQuote')
-//         const data = await res.json()
-//         console.log(data)
-//     }catch (error) {
-//     console.error(error);
-//     }
-// }
+let input = document.querySelector('#search')
+input.addEventListener('keyup',filterChars)
+
+function filterChars(){
+  let div=document.querySelectorAll('.card')
+  let txtValue;
+  let filter = input.value.toUpperCase();
+  let h2 = document.querySelectorAll('h2')
+  for (i = 0; i < h2.length; i++) {
+    txtValue=h2[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      div[i].style.display = "";
+    } else {
+        div[i].style.display = "none";
+    }
+  }
+}
