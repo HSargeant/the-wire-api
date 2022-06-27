@@ -203,3 +203,16 @@ table {
       border-bottom: 0; }
     table.alt tfoot {
       border-top: 0; }
+
+      @media screen and (max-width: 600px){
+        .navbar{
+            display:none;
+        }
+        .docs_main{
+            width: 100%;
+        }
+
+        .docHead li{
+            font-size: 0.6em;
+        }
+      }
