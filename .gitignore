@@ -1,4 +1,5 @@
 node_modules
 apiData.js
 .env
-/public/add.html
+add.html
+index.html

@@ -6,7 +6,7 @@ The API for the seminal TV series. This documentation will help
 with all you need to begin making your request.
 
 ## Base URL
-https://the-wire-api.herokuapp.com/api
+https://the-wire-api.herokuapp.com/
 
 ## Rate Limit
 This API is free, there is a rate limit of ______ requests a day. If reach the limit, you will regain access after 24 hours.
