@@ -280,6 +280,7 @@ pre{
 @media (max-width: 500px) {
     .cards {
         grid-template-columns: 1fr;
+        font-size: 0.8em;
     }
     .mainLogo {
         width: 300px;
@@ -302,7 +303,7 @@ pre{
 
     .card-back p.largeP{
 
-        font-size: 0.7em;
+        font-size: 0.7rem;
     }
 
 }
