@@ -8,8 +8,8 @@ with all you need to begin making your request.
 ## Base URL
 https://the-wire-api.herokuapp.com/
 
-## Rate Limit
-This API is free, there is a rate limit of ______ requests a day. If reach the limit, you will regain access after 24 hours.
+Visit here for full documentation
+
 
 ## Character Endpoints
 
@@ -24,6 +24,9 @@ This API is free, there is a rate limit of ______ requests a day. If reach the l
 | status      | string        | Are the still in the game or dead    			  |
 | aka		  | string        | A nickname or alias the character is referred as  |
 | seasons	  | array         | List of seasons that the character appeared in    |
+|first-seen   | string			| The first episode the character makes an appearance|
+|lasy-seen   | string			| The episode that the character makes their final appearance|
+
 
 #### Get info about all characters
 Endpoint to retrieve information from all characters.
