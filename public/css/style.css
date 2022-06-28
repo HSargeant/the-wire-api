@@ -281,8 +281,12 @@ pre{
     .cards {
         grid-template-columns: 1fr;
     }
-    header img {
+    .mainLogo {
         width: 300px;
+    }
+    header{
+        height: 200px;
+
     }
     .card{
         height:400px;
