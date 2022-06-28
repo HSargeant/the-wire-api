@@ -171,7 +171,7 @@ a, a:visited, a:valid, a:active{
 
 table {
   margin: 0 0 2em 0;
-  width: 100%; }
+  width: 50%; }
   table tbody tr {
     border-left: 0;
     border-right: 0; }
@@ -204,7 +204,22 @@ table {
     table.alt tfoot {
       border-top: 0; }
 
-      @media screen and (max-width: 600px){
+      .docLogos{
+        display: flex;
+        align-items: flex-end;
+        margin-left: 3em;
+      }
+
+      @media screen and (max-width: 1200px){
+
+        /* .docs_main{
+            width: 100%;
+        } */
+        table {
+            width: 100%; }
+      }
+
+      @media screen and (max-width: 750px){
         .navbar{
             display:none;
         }
@@ -215,4 +230,16 @@ table {
         .docHead li{
             font-size: 0.6em;
         }
+
+      }
+
+      @media screen and (max-width: 750px){
+        .docHead ul{
+            flex-direction: column;
+            font-size: 1.3em;
+            align-items:flex-start;
+            margin: 2% 0 0 2%;
+            font-weight: bold;
+        }
+
       }

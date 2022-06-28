@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="icon" type="image/x-icon" href="thewire.jpg">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>The Wire API</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,17 +13,18 @@
         <link rel="stylesheet" href="css/normalize.css">
     </head>
     <body>
-        <!-- <noscript>You need to enable JavaScript to run this app.</noscript> -->
             <div class="container">
                 <header class="center">
                     <nav>
                         <ul>
                             <li><a href="/">Home</a></li>
-                            <li><a href="/documentation.html">Documentation</a></li>
+                            <li><a href="/documentation">Documentation</a></li>
                             <li><a>About</a></li>
                         </ul>
                     </nav>
-                    <img src="the-wire-title-logo-slice.avif" alt="" >
+                    <div class="logos">
+                    <img class="mainLogo" src="The_Wire_logo.png" alt="the wire logo" ><img class="apiLogo" src="api.png" alt="api logo">
+                    </div>
 
                 </header>
                 <section class="search"> 
@@ -41,12 +43,16 @@
                                     <li><strong>Status:</strong> <%=characters[i].status %></li>
                                     <li><strong>Category:</strong> <%=characters[i].category %></li>
                                     <li><strong>Portrayed By:</strong> <%=characters[i].actor %></li>
+                                    <% if(characters[i].name.toLowerCase() == "william bunk moreland" ||characters[i].name.toLowerCase()== "frank sobotka"){ %>
+                                        <li><p class="largeP"><%= characters[i].about %></p></li>
+                                        <%} else{ %>
                                     <li><p><%= characters[i].about %></p></li>
-
+                                    <%}%>
                                 </ul>
                             </div>
                         </div>
                     </div>
+
                     <%}%>
                     
                 </section>

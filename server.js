@@ -48,8 +48,8 @@ MongoClient.connect(connectionString,{ useUnifiedTopology: true })
         .catch(error => console.error(error))
     })
     
-    app.get("documentation.html", async (req,res)=>{
-        res.send("documentation.html")
+    app.get("/documentation", async (req,res)=>{
+        res.sendFile(__dirname + "/documentation.html")
     })
 
     // app.get("/", async (req,res)=>{
