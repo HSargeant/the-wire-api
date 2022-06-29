@@ -1,3 +1,9 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 html{
     height:100%;
     
@@ -29,6 +35,34 @@ font-family: 'Roboto', sans-serif;
 
 }
 
+.apiLogo{
+    width: 75px
+}
+header {
+    color:black;
+    height: 225px;
+
+}
+header nav{
+    width: 100%;
+    display: flex;
+
+}
+.mainLogo {
+    width: 400px;
+}
+header nav ul{
+    display: flex;
+    align-items: center;
+    width: 500px;
+    justify-content: space-evenly;
+    /* margin:2% 0; */
+    padding: 1% 0;
+    height: 40px;
+    list-style: none;
+}
+
+/* ============================ */
 .documentation {
     /* background: #3b3b3b; */
     display: flex;
@@ -145,9 +179,9 @@ a, a:visited, a:valid, a:active{
     text-decoration: none;
     color: black;
 }
-.empty{
-    height: 100px;
-}
+/* .empty{
+    height: 20px;
+} */
 
 .json{
     margin: 15px 0;
@@ -208,7 +242,7 @@ table {
             width: 100%; }
       }
 
-      @media screen and (max-width: 750px){
+      @media screen and (max-width: 880px){
         .navbar{
             display:none;
         }
@@ -230,5 +264,23 @@ table {
             margin: 2% 0 0 2%;
             font-weight: bold;
         }
-
       }
+
+      #death_random{
+        height: 100px;
+      }
+
+      footer{
+        padding: 10px 0 20px 0;
+        width:100%;
+        background: white;
+        text-align: center;
+    }
+    footer a{
+        margin-right: 1em;
+    }
+    
+    a:hover{
+        color: rgb(82, 82, 82);
+        border-bottom: #000 solid 1px;
+    }
