@@ -4,10 +4,6 @@
     padding: 0;
 }
 
-html{
-    height:100%;
-    
-}
 h1,h2,h3,h4,h5{
     padding: 0;
 }
@@ -154,6 +150,9 @@ header nav ul{
     background: rgb(65, 63, 63);
     color: rgb(255, 255, 255);
     font-family: 'Source Code Pro', monospace;
+}
+pre{
+    overflow:auto;
 }
 
 .offset {
