@@ -263,7 +263,16 @@ table {
             margin: 2% 0 0 2%;
             font-weight: bold;
         }
-      }
+
+        .docImg{
+            width: 50%;
+            margin-right: 0;
+        }
+        .docLogos .apiLogo{
+            width: 20%;
+
+        }
+    }
 
       #death_random{
         height: 100px;
@@ -283,3 +292,4 @@ table {
         color: rgb(82, 82, 82);
         border-bottom: #000 solid 1px;
     }
+    
