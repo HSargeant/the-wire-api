@@ -1,7 +1,7 @@
 //express + MONGO SET UP
 const express = require("express")
 const app = express()
-const PORT = 7000
+const PORT = 4000
 const rateLimit = require('express-rate-limit')
 const bodyParser= require('body-parser')
 const apicache = require('apicache')
@@ -50,6 +50,9 @@ MongoClient.connect(connectionString,{ useUnifiedTopology: true })
     
     app.get("/documentation", async (req,res)=>{
         res.sendFile(__dirname + "/documentation.html")
+    })
+    app.get("/about", async (req,res)=>{
+        res.sendFile(__dirname + "/about.html")
     })
 
     // app.get("/", async (req,res)=>{
