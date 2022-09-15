@@ -34,7 +34,12 @@
                   
                     <div class="card">
                         <div class="card-inner">
-                            <div class="card-front"><img src=<%=characters[i].image %> alt="" ></div>
+                            <%if(i<9){%>
+                                <div class="card-front"><img src=<%=characters[i].image %> alt="<%=characters[i].name%> image" ></div>
+                           <% }else{ %>
+                                <div class="card-front"><img src=<%=characters[i].image %> loading="lazy" alt="<%=characters[i].name%> image" ></div>
+                            <%}%>
+
                             <div class="card-back">
                                 <h2><%=characters[i].name%></h2>
                                 <ul>
