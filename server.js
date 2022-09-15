@@ -9,8 +9,6 @@ const MongoClient = require("mongodb").MongoClient
 const cors = require("cors")
 require('dotenv').config()
 
-
-
 let db
 let dbName = process.env.DBNAME
 const connectionString = process.env.MONGO_URI
@@ -29,7 +27,6 @@ MongoClient.connect(connectionString,{ useUnifiedTopology: true })
 
     //cache
     const cache = apicache.middleware
-
 
     //rate limiting
     const limiter = rateLimit({
@@ -74,7 +71,7 @@ MongoClient.connect(connectionString,{ useUnifiedTopology: true })
 
         await db.collection("count").updateOne({'count': visitorCount[0].count},{$set: {"count":visitorCount[0].count+1}},function(err, res) {
             if (err) throw err;
-            console.log("1 document updated")
+            console.log("count++")
         })
 
     })
@@ -205,10 +202,7 @@ MongoClient.connect(connectionString,{ useUnifiedTopology: true })
         
         filteredDeaths.length >0? res.json(filteredDeaths) : res.json(deaths)
 
-
-
         // res.json(deaths)
-
 
         let visitorCount = await db.collection('count').find().toArray()
 

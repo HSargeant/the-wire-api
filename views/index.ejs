@@ -28,10 +28,10 @@
                 </header>
                 <section class="search"> 
                     <input id="search" type="search" placeholder="Search characters">
-                </section>
-                
+                </section>                
                 <section class="cards">
-                    <% for(let i=0; i < characters.length; i++) { %>
+                    <%for(i=0; i<characters.length; i++){%>
+                  
                     <div class="card">
                         <div class="card-inner">
                             <div class="card-front"><img src=<%=characters[i].image %> alt="" ></div>
@@ -51,15 +51,14 @@
                             </div>
                         </div>
                     </div>
-
                     <%}%>
-                    
+                    <section class="search-more">
+                    </section>
                 </section>
-
             </div>
             <footer id="footer">
                 <p class="copyright">&copy; <a href="https://hendersonsargeant.netlify.app" target="_blank">Henderson Sargeant</a> All rights reserved. 2022</p>
               </footer>
-        <script src="main.js"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>
