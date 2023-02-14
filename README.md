@@ -6,7 +6,7 @@ The API for the seminal TV series. This documentation will help
 with all you need to begin making your request.
 
 ## Base URL
-https://the-wire-api.herokuapp.com/
+https://the-wire-api.up.railway.app/
 
 Visit here for full documentation
 
