@@ -17,6 +17,10 @@ MongoClient.connect(connectionString,{ useUnifiedTopology: true })
     .then(client => {
         console.log(`Connected to ${dbName} Database`)
         db = client.db(dbName)
+    }).then(()=>{
+        app.listen(process.env.PORT || PORT,()=>{
+            console.log(`The server is running on port ${PORT}`)
+        })
     })
 
     app.set('view engine', 'ejs')
@@ -288,6 +292,3 @@ MongoClient.connect(connectionString,{ useUnifiedTopology: true })
         res.status(404).json({"characters":"/api/characters","quotes":"/api/quotes","deaths":"/api/deaths"});
       });
 
-    app.listen(process.env.PORT || PORT,()=>{
-        console.log(`The server is running on port ${PORT}`)
-    })
