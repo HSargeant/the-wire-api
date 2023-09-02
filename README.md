@@ -25,7 +25,7 @@ Visit here for full documentation
 | aka		  | string        | A nickname or alias the character is referred as  |
 | seasons	  | array         | List of seasons that the character appeared in    |
 |first-seen   | string			| The first episode the character makes an appearance|
-|lasy-seen   | string			| The episode that the character makes their final appearance|
+|last-seen   | string			| The episode that the character makes their final appearance|
 
 
 #### Get info about all characters
