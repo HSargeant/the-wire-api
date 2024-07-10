@@ -41,8 +41,6 @@ function shuffle(array) {
   }
 
 app.get('/', (req, res) => {
-
-
     db.collection('characters').find().toArray()
         .then(data => {
             data = shuffle(data)
