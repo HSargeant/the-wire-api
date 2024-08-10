@@ -6,7 +6,7 @@ The API for the seminal TV series. This documentation will help
 with all you need to begin making your request.
 
 ## Base URL
-https://thewireapi.cyclic.app
+https://the-wire-api.onrender.com
 
 Visit here for full documentation
 
