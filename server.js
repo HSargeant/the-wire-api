@@ -131,7 +131,7 @@ app.get('*', function (req, res) {
 
 const makeRequest = async () => { 
     try {
-        const url=process.env.NODE_ENV =="development" ? "http://localhost:8000/api" : "https://the-wire-api.onrender.com/api"
+        const url=process.env.NODE_ENV =="development" ? "http://localhost:4000/api" : "https://the-wire-api.onrender.com/api"
         const res = await fetch(url)
         const data=  await res.text()
       
