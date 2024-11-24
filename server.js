@@ -128,3 +128,17 @@ app.get("/api/category/:category", async (req, res) => {
 app.get('*', function (req, res) {
     res.status(404).json({ "characters": "/api/characters", "quotes": "/api/quotes", "deaths": "/api/deaths" });
 });
+
+const makeRequest = async () => { 
+    try {
+        const url=process.env.NODE_ENV =="development" ? "http://localhost:8000/api" : "https://the-wire-api.onrender.com/api"
+        const res = await fetch(url)
+        const data=  await res.text()
+      
+    } catch (error) {
+      console.log("ERROR: ",error)
+      
+    }
+  }
+  
+  setInterval(makeRequest, 10*60*1000);
