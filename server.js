@@ -65,7 +65,6 @@ app.get("/documentation", async (req, res) => {
     res.sendFile(__dirname + "/documentation.html")
 
     const data = await ejs.renderFile(__dirname + "/documentation.html", {})
-    console.log(data)
     myCache.set("documentation",data)
 })
 app.get("/about", async (req, res) => {
